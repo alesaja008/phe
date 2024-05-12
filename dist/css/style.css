@@ -24107,7 +24107,7 @@ fieldset:disabled .btn {
 
 @media (min-width:1200px) {
     .accordion.accordion-number .accordion-item .accordion-button .accordion-content .accordion-header {
-        font-size: 1.6875rem
+        font-size: 18px
     }
 }
 
@@ -27063,8 +27063,8 @@ body.page__homepage .main .hero-image-img {
 
 @media (min-width:1400px) {
     body.page__homepage .main .hero-image-img {
-        width: 100%;
-        right: -40px;
+        width: 90%;
+     
     }
 }
 
@@ -27087,7 +27087,7 @@ body.page__homepage .main .header-slider-pagination .swiper-pagination-bullet-ac
 body.page__homepage .main .how-it-work-image-img {
     max-width: 100%;
     max-height: 100%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1/0;
     -o-object-fit: cover;
     object-fit: cover;
     -o-object-position: center;
@@ -27121,7 +27121,7 @@ body.page__homepage .main .how-it-work-figure-1 {
 
 @media (min-width:1200px) {
     body.page__homepage .main .how-it-work-figure-1 {
-        bottom: calc(100% - 17rem);
+        bottom: calc(100% - 22rem);
         left: calc(100% - 13rem);
         width: 11rem;
     }
@@ -27775,14 +27775,77 @@ body.page__joblist .main .hero-image-img {
 
 
 /* countdown */
-#clockdiv{
+/* #clockdiv{
 	font-family: sans-serif;
 	color: #fff;
 	display: inline-block;
 	font-weight: 100;
 	text-align: center;
-	font-size: 50px;
+	font-size: 65px;
+} */
+
+@media (min-width:320px) and (max-width:576px) {
+    #clockdiv {
+        font-family: sans-serif;
+        color: #fff;
+        display: inline-block;
+        font-weight: 100;
+        text-align: center;
+        font-size: 50px;
+
+    }
+    #clockdiv > div {
+        padding: 8px 20px 8px 20px;
+        border-radius: 15px;
+        background: white;
+        display: inline-block;
+        border: 3px solid #0E74EA;
+    }
+    #clockdiv div > span {
+        padding: 0px;
+       
+    }
+    .smalltext {
+        font-size: 10px;
+        color: #0E74EA;
+        font-weight: 700;
+    }
 }
+
+
+@media (min-width:576px){
+    #clockdiv {
+        font-family: sans-serif;
+        color: #fff;
+        display: inline-block;
+        font-weight: 100;
+        text-align: center;
+        font-size: 65px;
+    }
+}
+
+@media (min-width:768px){
+    #clockdiv {
+        font-family: sans-serif;
+        color: #fff;
+        display: inline-block;
+        font-weight: 100;
+        text-align: center;
+        font-size: 65px;
+    }
+}
+@media (min-width:1400px){
+    #clockdiv {
+        font-family: sans-serif;
+        color: #fff;
+        display: inline-block;
+        font-weight: 100;
+        text-align: center;
+        font-size: 65px;
+    }
+}
+
+
 
 #clockdiv > div {
     padding: 8px 20px 8px 20px;
@@ -27819,9 +27882,13 @@ body.page__joblist .main .hero-image-img {
 .line::after {
     content: '';
     position: absolute;
-    width: 5px;
+    width: 8px;
     height: 100%;
     background-color: #F97300;
     top: 0;
     left: 5px;
+}
+
+.logoUcL {
+    margin-bottom: 2rem;
 }
