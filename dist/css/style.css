@@ -27892,3 +27892,13 @@ body.page__joblist .main .hero-image-img {
 .logoUcL {
     margin-bottom: 2rem;
 }
+
+.miniText {
+    font-size: 10px;
+}
+
+.boldList {
+    font-weight: bold;
+    margin: 2px;
+    font-size: 12px;
+}
