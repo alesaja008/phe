@@ -27063,7 +27063,8 @@ body.page__homepage .main .hero-image-img {
 
 @media (min-width:1400px) {
     body.page__homepage .main .hero-image-img {
-        width: 57rem
+        width: 100%;
+        right: -40px;
     }
 }
 
