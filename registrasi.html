@@ -1,0 +1,294 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./dist/css/regiStyle.css" />
+
+
+
+</head>
+
+<body>
+
+    <body>
+        <section>
+            <div class="row justify-content-center">
+                <h2 class="text-center title">Formulir Pendaftaran </h2>
+            </div>
+            <div class="cardRegist">
+                <h2>Be a Champion</h2>
+                <div class="progress-bar">
+                    <div class="step">
+                        <p>
+                            1
+                        </p>
+                        <div class="bullet">
+                            <span>1</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                    <div class="step">
+                        <p>
+                            2
+                        </p>
+                        <div class="bullet">
+                            <span>2</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                    <div class="step">
+                        <p>
+                            3
+                        </p>
+                        <div class="bullet">
+                            <span>3</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                    <div class="step">
+                        <p>
+                            4
+                        </p>
+                        <div class="bullet">
+                            <span>4</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                </div>
+                <div class="form-outer">
+                    <form action="#">
+                        <div class="page slide-page">
+                            <div class="titleHead">
+                                Data Diri:
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    Nama Lengkap
+
+                                </div>
+                                <input type="text">
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    Gender
+                                </div>
+                                <select>
+                                    <option>Laki - Laki</option>
+                                    <option>Wanita</option>
+
+                                </select>
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    Email Kantor<br>
+                                    <span class="textForm">(@pertamina.com / @elnusa.co.id
+                                        / @badaklng.com)</span>
+                                </div>
+                                <input type="text">
+                            </div>
+
+                            <div class="field">
+                                <button class="firstNext next">Next</button>
+                            </div>
+                        </div>
+                        <!-- batas -->
+                        <div class="page">
+                            <div class="title">
+                                Status Bekerja
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    posisi
+                                </div>
+                                <input type="text">
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    Lama Bekerja
+                                </div>
+                                <input type="Number">
+                            </div>
+
+                            <div class="field">
+                                <div class="label">
+                                    Status Kepegawaian
+                                </div>
+                                <select>
+                                    <option>Permanent</option>
+                                    <option>Kontrak</option>
+                                </select>
+                            </div>
+                            <div class="field btns">
+                                <button class="prev-1 prev">Previous</button>
+                                <button class="next-1 next">Next</button>
+                            </div>
+                        </div>
+                        <!-- batas -->
+                        <div class="page">
+                            <div class="title">
+                                Pertanyaan Proses Seleksi
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    <span class="textForm">1. Alasan ingin mengikuti Upstream Champion (Jelaskan dalam
+                                        minimal tiga kalimat)</span>
+                                </div>
+                                <input type="text">
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    <span class="textForm">2. Pengalaman/kegiatan yang
+                                        pernah diikuti selama bekerja di
+                                        Subholding Upstream?
+                                        (Misalnya, komunitas lari,
+                                        webinar ESG, dan lain
+                                        sebagainya).</span>
+                                </div>
+                                <input type="text">
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    <span class="textForm">3. Ide kegiatan yang ingin
+                                        direalisasikan ketika terpilih
+                                        sebagai Upstream Champion?</span>
+                                </div>
+                                <input type="text">
+                            </div>
+
+                            <div class="field btns">
+                                <button class="prev-2 prev">Previous</button>
+                                <button class="next-2 next">Next</button>
+                            </div>
+                        </div>
+                        <!-- batas -->
+                        <div class="page">
+                            <div class="title">
+                                Login Details:
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    Username
+                                </div>
+                                <input type="text">
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    Password
+                                </div>
+                                <input type="password">
+                            </div>
+                            <div class="field btns">
+                                <button class="prev-3 prev">Previous</button>
+                                <button class="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="container">
+
+                <div class="fs-14 text-center title" id="copyright">
+                    PT Pertamina Hulu Energi © Copyright <span id="currentYear"></span>.<br> All rights reserved.
+                </div>
+            </div>
+        </section>
+
+        <!-- date Copyright -->
+        <script>
+            // Fungsi untuk memperbarui tahun
+            function updateYear() {
+                var currentYear = new Date().getFullYear();
+                document.getElementById("currentYear").textContent = currentYear;
+            }
+
+            // Panggil fungsi untuk memperbarui tahun pertama kali
+            updateYear();
+
+            // Perbarui tahun setiap kali tahun berubah
+            setInterval(updateYear, 1000); // Anda bisa mengubah interval waktu sesuai kebutuhan
+        </script>
+        <script>
+            <!-- Created By CodingNepal -->
+            const slidePage = document.querySelector(".slide-page");
+            const nextBtnFirst = document.querySelector(".firstNext");
+            const prevBtnSec = document.querySelector(".prev-1");
+            const nextBtnSec = document.querySelector(".next-1");
+            const prevBtnThird = document.querySelector(".prev-2");
+            const nextBtnThird = document.querySelector(".next-2");
+            const prevBtnFourth = document.querySelector(".prev-3");
+            const submitBtn = document.querySelector(".submit");
+            const progressText = document.querySelectorAll(".step p");
+            const progressCheck = document.querySelectorAll(".step .check");
+            const bullet = document.querySelectorAll(".step .bullet");
+            let current = 1;
+
+            nextBtnFirst.addEventListener("click", function (event) {
+                event.preventDefault();
+                slidePage.style.marginLeft = "-25%";
+                bullet[current - 1].classList.add("active");
+                progressCheck[current - 1].classList.add("active");
+                progressText[current - 1].classList.add("active");
+                current += 1;
+            });
+            nextBtnSec.addEventListener("click", function (event) {
+                event.preventDefault();
+                slidePage.style.marginLeft = "-50%";
+                bullet[current - 1].classList.add("active");
+                progressCheck[current - 1].classList.add("active");
+                progressText[current - 1].classList.add("active");
+                current += 1;
+            });
+            nextBtnThird.addEventListener("click", function (event) {
+                event.preventDefault();
+                slidePage.style.marginLeft = "-75%";
+                bullet[current - 1].classList.add("active");
+                progressCheck[current - 1].classList.add("active");
+                progressText[current - 1].classList.add("active");
+                current += 1;
+            });
+            submitBtn.addEventListener("click", function () {
+                bullet[current - 1].classList.add("active");
+                progressCheck[current - 1].classList.add("active");
+                progressText[current - 1].classList.add("active");
+                current += 1;
+                setTimeout(function () {
+                    alert("Your Form Successfully Signed up");
+                    location.reload();
+                }, 800);
+            });
+
+            prevBtnSec.addEventListener("click", function (event) {
+                event.preventDefault();
+                slidePage.style.marginLeft = "0%";
+                bullet[current - 2].classList.remove("active");
+                progressCheck[current - 2].classList.remove("active");
+                progressText[current - 2].classList.remove("active");
+                current -= 1;
+            });
+            prevBtnThird.addEventListener("click", function (event) {
+                event.preventDefault();
+                slidePage.style.marginLeft = "-25%";
+                bullet[current - 2].classList.remove("active");
+                progressCheck[current - 2].classList.remove("active");
+                progressText[current - 2].classList.remove("active");
+                current -= 1;
+            });
+            prevBtnFourth.addEventListener("click", function (event) {
+                event.preventDefault();
+                slidePage.style.marginLeft = "-50%";
+                bullet[current - 2].classList.remove("active");
+                progressCheck[current - 2].classList.remove("active");
+                progressText[current - 2].classList.remove("active");
+                current -= 1;
+            });
+        </script>
+
+
+
+    </body>
+
+</html>
