@@ -33,11 +33,11 @@
             background: linear-gradient(0deg, rgba(161, 190, 54, 1) 0%, rgba(5, 103, 203, 1) 100%);
         }
 
-        .container {
+        .formRegist {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            /* height: 100vh; */
         }
 
 
@@ -204,14 +204,57 @@
             width: 100%;
             padding: 3px 6px 5px 13px;
         }
+
+        .logoSec {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logoUcL {
+            width: 10%;
+        }
+
+        .logoSec h2 {
+            margin-top: 0.5rem;
+        }
+
+        .logoSec img {
+            width: 70px;
+        }
+
+        .auth-circle {
+            left: calc(50% - 275px);
+            position: absolute;
+            width: 550px;
+            z-index: -1;
+        }
+
+        .people-circle {
+            left: calc(50% - 485px);
+            position: absolute;
+            top: 239px;
+            width: 850px;
+            z-index: -1;
+            margin: auto;
+            left: 0;
+            right: 0;
+        }
     </style>
 </head>
 
 <body>
     <section>
-        <!-- <img class="logoUcL" src="./assets/logo/Upstream Champion Portrait Logo Light.png" width="10%" alt="" /> -->
-        <div class="container">
+        <img class="auth-circle" src="./assets/img/EllipseRegist.svg" alt="background-circle">
+        <img class="people-circle" src="./assets/img/formImg.png" alt="background-circle2">
+        <div class="logoSec">
+            <img class="imgLogo" src="./assets/logo/Upstream Champion Portrait Logo Light.png" width="10%" alt="" />
+            <h2 class="text-white">Registration Form</h2>
+        </div>
 
+        <div class="formRegist">
             <form action="#" class="form">
                 <h4 class="text-center">Please Sign Up to be a Champion!</h4>
                 <p class="text-center">Silakan Isi Data Diri Anda</p>
