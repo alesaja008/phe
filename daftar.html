@@ -198,6 +198,12 @@
         .btn:hover {
             box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
         }
+
+        select#gender {
+            height: 30px;
+            width: 100%;
+            padding: 3px 6px 5px 13px;
+        }
     </style>
 </head>
 
@@ -224,14 +230,25 @@
                         <label for="username">Nama Lengkap</label>
                         <input class="rounded-pill formhHeight" type="text" name="username" id="username" />
                     </div>
-                    <div class="input-group">
-                        <label for="position">Jenis Kelamin</label>
-                        <input class="rounded-pill formhHeight" type="text" name="position" id="position" />
+                    <div class="form-group">
+                        <label for="gender">Jenis Kelamin</label>
+                        <select class="form-control rounded-pill LineHeight" id="gender">
+                            <option>Laki-Laki</option>
+                            <option>Wanita</option>
+                        </select>
                     </div>
-                    <div class="input-group">
-                        <label for="position">Usia </label>
-                        <input class="rounded-pill formhHeight" type="text" name="position" id="position" />
+
+                    <div class="form-group">
+                        <label for="gender">Jenis Kelamin</label>
+                        <select class="form-control rounded-pill formhHeight" id="gender">
+                            <option>
+                                <=30 Tahun</option>
+                            <option>31-40 Tahun</option>
+                            <option>41-50 Tahun</option>
+                            <option>>=51 Tahun</option>
+                        </select>
                     </div>
+
                     <div class="input-group">
                         <label for="email">Email <span class="textMini">@pertamina.com / @elnusa.co.id
                                 /@badaklng.com</span></label>
@@ -263,8 +280,8 @@
                         <input class="rounded-pill formhHeight" type="text" name="email" id="email" />
                     </div>
                     <div class="btns-group">
-                        <a href="#" class="btn btn-prev rounded-pill">Previous</a>
-                        <a href="#" class="btn btn-next rounded-pill">Next</a>
+                        <a href="#" class="btn btn-prev rounded-pill ">Previous</a>
+                        <a href="#" class="btn btn-next rounded-pill ">Next</a>
                     </div>
                 </div>
                 <div class="form-step">
@@ -291,8 +308,8 @@
                     </div>
 
                     <div class="btns-group">
-                        <a href="#" class="btn btn-prev">Previous</a>
-                        <a href="#" class="btn btn-next">Next</a>
+                        <a href="#" class="btn btn-prev rounded-pill">Previous</a>
+                        <a href="#" class="btn btn-next rounded-pill">Next</a>
                     </div>
                 </div>
 
