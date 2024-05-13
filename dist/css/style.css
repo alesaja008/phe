@@ -2088,6 +2088,31 @@ fieldset:disabled .btn {
     opacity: 0.65
 }
 
+
+.btn-orange {
+    color: #fff;
+    background-color: #F97300;
+    border-color: #F97300;
+}
+
+.btn-orange:hover {
+    color: #fff;
+    background-color: #ff902e;
+    border-color: #ff902e;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #D50E1B;
+    border-color: #D50E1B;
+}
+
+.btn-danger:hover {
+    color: #fff;
+    background-color: #ee101f;
+    border-color: #ee101f;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #0156B8;
@@ -27750,7 +27775,7 @@ body.page__joblist .main .hero-image-img {
     display: block;
     left: 0;
     right: 0;
-    margin-top: -18rem;
+    /* margin-top: -18rem; */
 }
 
 
