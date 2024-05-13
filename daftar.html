@@ -215,7 +215,7 @@
                     <div class="progress-step progress-step-active"></div>
                     <div class="progress-step"></div>
                     <div class="progress-step"></div>
-                    <div class="progress-step"></div>
+
                 </div>
 
                 <!-- Steps -->
@@ -289,33 +289,13 @@
                             sebagai Upstream Champion?</label>
                         <input class="rounded-pill formhHeight" type="text" name="username" id="username" />
                     </div>
-                    <div class="input-group">
-                        <label for="dob">Date of Birth</label>
-                        <input type="date" name="dob" id="dob" />
-                    </div>
-                    <div class="input-group">
-                        <label for="ID">National ID</label>
-                        <input type="number" name="ID" id="ID" />
-                    </div>
+
                     <div class="btns-group">
                         <a href="#" class="btn btn-prev">Previous</a>
                         <a href="#" class="btn btn-next">Next</a>
                     </div>
                 </div>
-                <div class="form-step">
-                    <div class="input-group">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" />
-                    </div>
-                    <div class="input-group">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" name="confirmPassword" id="confirmPassword" />
-                    </div>
-                    <div class="btns-group">
-                        <a href="#" class="btn btn-prev">Previous</a>
-                        <input type="submit" value="Submit" class="btn" />
-                    </div>
-                </div>
+
             </form>
         </div>
     </section>
@@ -372,7 +352,7 @@
 
         function updateProgressbar() {
             progressSteps.forEach((progressStep, idx) => {
-                if (idx < formStepsNum + 0) {
+                if (idx < formStepsNum + 1) {
                     progressStep.classList.add("progress-step-active");
                 } else {
                     progressStep.classList.remove("progress-step-active");
