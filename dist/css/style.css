@@ -27927,3 +27927,19 @@ body.page__joblist .main .hero-image-img {
     margin: 2px;
     font-size: 12px;
 }
+
+.cardTimeline {
+    background: #0E74EA;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 5px;
+    color: white;
+}
+
+.cardTimelineActive {
+    background: #D50E1B;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 5px;
+    color: white;
+}
