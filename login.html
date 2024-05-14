@@ -194,6 +194,11 @@
         left: 0;
         right: 0;
       }
+
+      a.fst-italic.forget {
+        font-size: 14px;
+        text-decoration: none;
+      }
     </style>
   </head>
 
@@ -250,11 +255,18 @@
                   id="password"
                 />
               </div>
+
               <div class="">
                 <a href="#" class="btn btn-next width-100 ml-auto rounded-pill"
                   >Masuk</a
                 >
               </div>
+              <div class="d-flex flex-row-reverse mt-25">
+                <div class="p-2">
+                  <a href="#" class="fst-italic forget">Lupa Password?</a>
+                </div>
+              </div>
+              <hr />
             </div>
           </form>
         </div>
@@ -276,5 +288,8 @@
       updateYear();
       setInterval(updateYear, 1000);
     </script>
+
+    <!-- Bootstrap JS -->
+    <script src="./vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
