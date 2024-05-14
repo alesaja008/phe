@@ -1,691 +1,628 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Registraion Form</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Theme CSS -->
-    <link rel="stylesheet" href="./dist/css/style.css" />
+  <title>Registraion Form</title>
 
-    <style>
-      :root {
-        --primary-color: rgb(11, 78, 179);
-      }
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="./dist/css/style.css" />
 
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
+  <style>
+    :root {
+      --primary-color: rgb(11, 78, 179);
+    }
 
-      body {
-        font-family: "Poppins", Roboto, Arial, Sans-serif;
-        margin: 0;
-        display: grid;
-        place-items: center;
-        min-height: 100vh;
-        background: linear-gradient(
-          0deg,
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", Roboto, Arial, Sans-serif;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      background: linear-gradient(0deg,
           rgba(161, 190, 54, 1) 0%,
-          rgba(5, 103, 203, 1) 100%
-        );
-      }
+          rgba(5, 103, 203, 1) 100%);
+    }
 
-      .formRegist {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* height: 100vh; */
-      }
+    .formRegist {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* height: 100vh; */
+    }
 
-      /* Global Stylings */
-      label {
-        display: block;
-        margin-bottom: 0.5rem;
-      }
+    /* Global Stylings */
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
 
-      input {
-        display: block;
-        width: 100%;
-        padding: 0.75rem;
-        border: 1px solid #ccc;
-        border-radius: 0.25rem;
-      }
+    input {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+    }
 
-      .width-50 {
-        width: 50%;
-      }
+    .width-50 {
+      width: 50%;
+    }
 
-      .ml-auto {
-        margin-left: auto;
-      }
+    .ml-auto {
+      margin-left: auto;
+    }
 
-      .text-center {
-        text-align: center;
-      }
+    .text-center {
+      text-align: center;
+    }
 
-      span.textMini {
-        font-size: 12px;
-        color: #818181;
-      }
+    span.textMini {
+      font-size: 12px;
+      color: #818181;
+    }
 
-      /* Progressbar */
-      .progressbar {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        counter-reset: step;
-        margin: 1rem 0 1rem;
-      }
+    /* Progressbar */
+    .progressbar {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      counter-reset: step;
+      margin: 1rem 0 1rem;
+    }
 
-      .progressbar::before,
-      .progress {
-        content: "";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 4px;
-        width: 100%;
-        background-color: #ecf2f8;
-        z-index: 1;
-      }
+    .progressbar::before,
+    .progress {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 4px;
+      width: 100%;
+      background-color: #ecf2f8;
+      z-index: 1;
+    }
 
-      .progress {
-        background-color: var(--primary-color);
-        width: 0%;
-        transition: 0.3s;
-      }
+    .progress {
+      background-color: var(--primary-color);
+      width: 0%;
+      transition: 0.3s;
+    }
 
-      .progress-step {
-        width: 2.1875rem;
-        height: 2.1875rem;
-        background-color: #dcdcdc;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 2;
-      }
+    .progress-step {
+      width: 2.1875rem;
+      height: 2.1875rem;
+      background-color: #dcdcdc;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
 
-      .progress-step::before {
-        counter-increment: step;
-        content: counter(step);
-      }
+    .progress-step::before {
+      counter-increment: step;
+      content: counter(step);
+    }
 
-      .progress-step::after {
-        content: attr(data-title);
-        position: absolute;
-        top: calc(100% + 0.5rem);
-        font-size: 0.85rem;
-        color: #666;
-      }
+    .progress-step::after {
+      content: attr(data-title);
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      font-size: 0.85rem;
+      color: #666;
+    }
 
-      .progress-step-active {
-        background-color: var(--primary-color);
-        color: #f3f3f3;
-      }
+    .progress-step-active {
+      background-color: var(--primary-color);
+      color: #f3f3f3;
+    }
 
-      /* Form */
+    /* Form */
 
-      .form {
-        overflow: hidden;
-        width: clamp(500px, 30%, 430px);
-        margin: 0 auto;
-        background-color: white;
-        border: 1px solid #ccc;
-        border-radius: 20px;
-        padding: 2rem;
-      }
-      /* 
+    .form {
+      overflow: hidden;
+      width: clamp(500px, 30%, 430px);
+      margin: 0 auto;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      padding: 2rem;
+    }
+
+    /* 
       .form-step {
         display: none;
         transform-origin: top;
         animation: animate 0.5s;
       } */
 
-      .form-step {
-        display: none;
+    .form-step {
+      display: none;
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+
+    @keyframes slideInFromLeft {
+      from {
         transform: translateX(-100%);
         opacity: 0;
       }
 
-      @keyframes slideInFromLeft {
-        from {
-          transform: translateX(-100%);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0);
-          opacity: 1;
-        }
+      to {
+        transform: translateX(0);
+        opacity: 1;
       }
+    }
 
-      .form-step-active {
-        display: block;
-        animation: slideInFromLeft 0.5s forwards; /* 'forwards' mempertahankan state akhir animasi */
-      }
+    .form-step-active {
+      display: block;
+      animation: slideInFromLeft 0.5s forwards;
+      /* 'forwards' mempertahankan state akhir animasi */
+    }
 
-      /* .form-step-active {
+    /* .form-step-active {
         display: block;
       } */
 
-      .input-group {
-        margin: 0.5rem 0;
+    .input-group {
+      margin: 0.5rem 0;
+    }
+
+    .input-group label {
+      font-size: 13px;
+    }
+
+    input.formhHeight {
+      height: 30px;
+      border: 1px solid #e2e2e2;
+    }
+
+    @keyframes animate {
+      from {
+        transform: scale(1, 0);
+        opacity: 0;
       }
 
-      .input-group label {
-        font-size: 13px;
+      to {
+        transform: scale(1, 1);
+        opacity: 1;
       }
+    }
 
-      input.formhHeight {
-        height: 30px;
-        border: 1px solid #e2e2e2;
-      }
+    /* Button */
+    .btns-group {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
 
-      @keyframes animate {
-        from {
-          transform: scale(1, 0);
-          opacity: 0;
-        }
+    .btn {
+      padding: 0.75rem;
+      display: block;
+      text-decoration: none;
+      background-color: var(--primary-color);
+      color: #f3f3f3;
+      text-align: center;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-        to {
-          transform: scale(1, 1);
-          opacity: 1;
-        }
-      }
+    .btn:hover {
+      box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+    }
 
-      /* Button */
-      .btns-group {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-      }
+    .form-group label {
+      font-size: 13px;
+    }
 
-      .btn {
-        padding: 0.75rem;
-        display: block;
-        text-decoration: none;
-        background-color: var(--primary-color);
-        color: #f3f3f3;
-        text-align: center;
-        border-radius: 0.25rem;
-        cursor: pointer;
-        transition: 0.3s;
-      }
+    select#gender {
+      height: 30px;
+      width: 100%;
+      padding: 3px 6px 5px 13px;
+      font-size: 13px;
+    }
 
-      .btn:hover {
-        box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
-      }
+    select#age {
+      height: 30px;
+      width: 100%;
+      padding: 3px 6px 5px 13px;
+      font-size: 13px;
+    }
 
-      .form-group label {
-        font-size: 13px;
-      }
+    select#status {
+      height: 30px;
+      width: 100%;
+      padding: 3px 6px 5px 13px;
+      font-size: 13px;
+    }
 
-      select#gender {
-        height: 30px;
-        width: 100%;
-        padding: 3px 6px 5px 13px;
-        font-size: 13px;
-      }
+    select#workingPeriod {
+      height: 30px;
+      width: 100%;
+      padding: 3px 6px 5px 13px;
+      font-size: 13px;
+    }
 
-      select#age {
-        height: 30px;
-        width: 100%;
-        padding: 3px 6px 5px 13px;
-        font-size: 13px;
-      }
+    select#posisi {
+      height: 30px;
+      width: 100%;
+      padding: 3px 6px 5px 13px;
+      font-size: 13px;
+    }
 
-      select#status {
-        height: 30px;
-        width: 100%;
-        padding: 3px 6px 5px 13px;
-        font-size: 13px;
-      }
-      select#workingPeriod {
-        height: 30px;
-        width: 100%;
-        padding: 3px 6px 5px 13px;
-        font-size: 13px;
-      }
-      select#posisi {
-        height: 30px;
-        width: 100%;
-        padding: 3px 6px 5px 13px;
-        font-size: 13px;
-      }
+    .logoSec {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-      .logoSec {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
+    .logoUcL {
+      width: 10%;
+    }
 
-      .logoUcL {
-        width: 10%;
-      }
+    .logoSec h2 {
+      margin-top: 0.5rem;
+    }
 
-      .logoSec h2 {
-        margin-top: 0.5rem;
-      }
+    .logoSec img {
+      width: 70px;
+    }
 
-      .logoSec img {
-        width: 70px;
-      }
+    .auth-circle {
+      left: calc(50% - 275px);
+      position: absolute;
+      width: 550px;
+      z-index: -1;
+    }
 
-      .auth-circle {
-        left: calc(50% - 275px);
-        position: absolute;
-        width: 550px;
-        z-index: -1;
-      }
+    .people-circle {
+      left: calc(50% - 485px);
+      position: absolute;
+      top: 239px;
+      width: 850px;
+      z-index: -1;
+      margin: auto;
+      left: 0;
+      right: 0;
+    }
 
+    .form-step.form-step-active img {
+      margin: auto;
+      left: 0;
+      right: 0;
+      display: block;
+      padding: 10px;
+      background: rgb(240 246 255);
+      border-radius: 100%;
+    }
+
+    @media (max-width: 320px) {
       .people-circle {
-        left: calc(50% - 485px);
-        position: absolute;
-        top: 239px;
-        width: 850px;
-        z-index: -1;
-        margin: auto;
-        left: 0;
-        right: 0;
+        display: none;
       }
-      .form-step.form-step-active img {
-        margin: auto;
-        left: 0;
-        right: 0;
-        display: block;
-        padding: 10px;
-        background: rgb(240 246 255);
-        border-radius: 100%;
-      }
+    }
 
-      @media (max-width: 320px) {
-        .people-circle {
-          display: none;
-        }
-      }
+    .form-check-input {
+      margin-left: -1.25rem;
+      margin-top: 0.3rem;
+      position: absolute;
+    }
 
-      .form-check-input {
-        margin-left: -1.25rem;
-        margin-top: 0.3rem;
-        position: absolute;
-      }
+    label.form-check-label {
+      font-size: 12px;
+      font-weight: 300;
+      display: block;
+      margin: 0;
+      top: auto;
+      padding-top: 10px;
+    }
 
-      label.form-check-label {
-        font-size: 12px;
-        font-weight: 300;
-        display: block;
-        margin: 0;
-        top: auto;
-        padding-top: 10px;
-      }
-      span.text-bold {
-        font-weight: 700;
-      }
-      .textSk {
-        font-size: 12px;
-        color: #818181;
-        line-height: 2;
-        display: ruby-text;
-      }
-    </style>
-  </head>
+    span.text-bold {
+      font-weight: 700;
+    }
 
-  <body>
-    <section>
-      <div class="container">
-        <img
-          class="auth-circle"
-          src="./assets/img/EllipseRegist.svg"
-          alt="background-circle"
-        />
-        <img
-          class="people-circle"
-          src="./assets/img/formImg.png"
-          alt="background-circle2"
-        />
-        <div class="logoSec">
-          <img
-            class="imgLogo"
-            src="./assets/logo/Upstream Champion Portrait Logo Light.png"
-            width="10%"
-            alt=""
-          />
-          <h2 class="text-white">Registration Form</h2>
-        </div>
-        <div class="formRegist">
-          <form action="#" class="form">
-            <h4 class="text-center">Please Sign Up to be a Champion!</h4>
-            <p class="text-center">Silakan Isi Data Diri Anda</p>
-            <!-- Progress bar -->
-            <div class="progressbar">
-              <div class="progress" id="progress"></div>
-              <div class="progress-step progress-step-active"></div>
-              <div class="progress-step"></div>
-              <div class="progress-step"></div>
-            </div>
+    .textSk {
+      font-size: 12px;
+      color: #818181;
+      line-height: 2;
+      display: ruby-text;
+    }
 
-            <!-- Steps -->
-            <div class="form-step form-step-active">
-              <div class="input-group">
-                <label for="username">Nama Lengkap</label>
-                <input
-                  class="rounded-pill formhHeight"
-                  type="text"
-                  name="username"
-                  id="username"
-                />
-              </div>
-              <div class="form-group">
-                <label for="gender">Jenis Kelamin</label>
-                <select
-                  class="form-control rounded-pill LineHeight"
-                  id="gender"
-                >
-                  <option>Laki-Laki</option>
-                  <option>Wanita</option>
-                </select>
-              </div>
+    .btn-orange {
+      color: #fff;
+      background-color: #F97300;
+      border-color: #F97300;
+    }
+  </style>
+</head>
 
-              <div class="form-group">
-                <label for="age">Usia</label>
-                <select class="form-control rounded-pill formhHeight" id="age">
-                  <option><=30 Tahun</option>
-                  <option>31-40 Tahun</option>
-                  <option>41-50 Tahun</option>
-                  <option>>=51 Tahun</option>
-                </select>
-              </div>
-
-              <div class="input-group">
-                <label for="email"
-                  >Alamat Email
-                  <span class="textMini"
-                    >(@pertamina.com / @elnusa.co.id / @badaklng.com)</span
-                  >
-                </label>
-                <input
-                  class="rounded-pill formhHeight"
-                  type="text"
-                  name="email"
-                  id="email"
-                />
-              </div>
-              <div class="input-group">
-                <label for="password">Kata Sandi</label>
-                <input
-                  class="rounded-pill formhHeight"
-                  type="password"
-                  name="password"
-                  id="password"
-                />
-              </div>
-              <div class="">
-                <a href="#" class="btn btn-next width-50 ml-auto rounded-pill"
-                  >Next</a
-                >
-              </div>
-            </div>
-
-            <div class="form-step">
-              <div class="input-group">
-                <label for="workerNumber">No. Pekerja</label>
-                <input
-                  class="rounded-pill formhHeight"
-                  type="text"
-                  name="workerNumber"
-                  id="workerNumber"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="posisi">Level Jabatan</label>
-                <select
-                  class="form-control rounded-pill formhHeight"
-                  id="posisi"
-                >
-                  <option>Asst. Manager / Setara</option>
-                  <option>Sr. Officer / Setara</option>
-                  <option>Officer / Setara</option>
-                  <option>Jr. officer / Setara</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="workingPeriod">Lama Bekerja</label>
-                <select
-                  class="form-control rounded-pill formhHeight"
-                  id="workingPeriod"
-                >
-                  <option>>1 tahun</option>
-                  <option>>5 tahun</option>
-                  <option>>10 tahun</option>
-                  <option>>15 tahun</option>
-                  <option>>20 tahun</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="status">Status Kepegawaian</label>
-                <select
-                  class="form-control rounded-pill formhHeight"
-                  id="status"
-                >
-                  <option>PWT</option>
-                  <option>PWTT</option>
-                </select>
-              </div>
-              <div class="btns-group mt-5">
-                <a href="#" class="btn btn-prev rounded-pill">Previous</a>
-                <a href="#" class="btn btn-next rounded-pill">Next</a>
-              </div>
-            </div>
-
-            <div class="form-step">
-              <div class="input-group">
-                <label for="reason"
-                  >1. Alasan ingin mengikuti Upstream Champion(Jelaskan dalam
-                  minimal tiga kalimat)</label
-                >
-                <input
-                  class="rounded-pill formhHeight"
-                  type="text"
-                  name="reason"
-                  id="reason"
-                />
-              </div>
-              <div class="input-group">
-                <label for="experience"
-                  >2. Pengalaman/kegiatan yang pernah diikuti selama bekerja di
-                  Subholding Upstream? (Misalnya, komunitas lari, webinar ESG,
-                  dan lain sebagainya).</label
-                >
-                <input
-                  class="rounded-pill formhHeight"
-                  type="textarea"
-                  name="experience"
-                  id="experience"
-                />
-              </div>
-              <div class="input-group">
-                <label for="idea"
-                  >3. Ide kegiatan yang ingin direalisasikan ketika terpilih
-                  sebagai Upstream Champion?</label
-                >
-                <input
-                  class="rounded-pill formhHeight"
-                  type="text"
-                  name="idea"
-                  id="idea"
-                />
-              </div>
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  id="rememberMe"
-                  class="form-check-input"
-                /><label title="" for="rememberMe" class="form-check-label"
-                  >Saya menyetujui
-                  <span
-                    class="text-bold"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    Syarat dan Ketentuan
-                  </span>
-                  yang berlaku</label
-                >
-              </div>
-              <div class="btns-group">
-                <a href="#" class="btn btn-prev rounded-pill">Previous</a>
-                <a href="#" class="btn btn-next rounded-pill">Finish</a>
-              </div>
-            </div>
-
-            <div class="form-step">
-              <img
-                class="mt-43"
-                src="./assets/img/checklist.png"
-                alt="check"
-                width="100"
-              />
-              <h4 class="text-center mt-43">Terima Kasih telah Mendaftar!</h4>
-              <p class="text-center">
-                Silakan periksa kotak masuk pada email untuk
-                verifikasi data diri Anda!
-              </p>
-            </div>
-          </form>
-        </div>
-
-        <div class="fs-14 text-white text-center py-20" id="copyright">
-          PT Pertamina Hulu Energi © Copyright
-          <span id="currentYear"></span>.<br />
-          All rights reserved.
-        </div>
+<body>
+  <section>
+    <div class="container">
+      <img class="auth-circle" src="./assets/img/EllipseRegist.svg" alt="background-circle" />
+      <img class="people-circle" src="./assets/img/formImg.png" alt="background-circle2" />
+      <div class="logoSec">
+        <img class="imgLogo" src="./assets/logo/Upstream Champion Portrait Logo Light.png" width="10%" alt="" />
+        <h2 class="text-white">Registration Form</h2>
       </div>
-    </section>
-
-    <!-- modal -->
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fs-5" id="exampleModalLabel">
-              Syarat dan Ketentuan
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+      <div class="formRegist">
+        <form action="#" class="form">
+          <h4 class="text-center">Please Sign Up to be a Champion!</h4>
+          <p class="text-center">Silakan Isi Data Diri Anda</p>
+          <!-- Progress bar -->
+          <div class="progressbar">
+            <div class="progress" id="progress"></div>
+            <div class="progress-step progress-step-active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
           </div>
-          <div class="modal-body">
-            <ul>
-              <li class="textSk">
-                <img src="./assets/img/icon/check-circle.svg" alt="" />
+
+          <!-- Steps -->
+          <div class="form-step form-step-active">
+            <div class="input-group">
+              <label for="username">Nama Lengkap</label>
+              <input class="rounded-pill formhHeight" type="text" name="username" id="username" />
+            </div>
+            <div class="form-group">
+              <label for="gender">Jenis Kelamin</label>
+              <select class="form-control rounded-pill LineHeight" id="gender">
+                <option>Laki-Laki</option>
+                <option>Wanita</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="age">Usia</label>
+              <select class="form-control rounded-pill formhHeight" id="age">
+                <option>
+                  <=30 Tahun</option>
+                <option>31-40 Tahun</option>
+                <option>41-50 Tahun</option>
+                <option>>=51 Tahun</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="email">Alamat Email
+                <span class="textMini">(@pertamina.com / @elnusa.co.id / @badaklng.com)</span>
+              </label>
+              <input class="rounded-pill formhHeight" type="text" name="email" id="email" />
+            </div>
+            <div class="input-group">
+              <label for="password">Kata Sandi</label>
+              <input class="rounded-pill formhHeight" type="password" name="password" id="password" />
+            </div>
+            <div class="">
+              <a href="#" class="btn btn-next width-50 ml-auto rounded-pill">Next</a>
+            </div>
+          </div>
+
+          <div class="form-step">
+            <div class="input-group">
+              <label for="workerNumber">Fungsi / Departemen</label>
+              <input class="rounded-pill formhHeight" type="text" name="workerNumber" id="workerNumber" />
+            </div>
+            <div class="input-group">
+              <label for="workerNumber">Lokasi Kerja</label>
+              <input class="rounded-pill formhHeight" type="text" name="workerNumber" id="workerNumber" />
+            </div>
+
+            <div class="input-group">
+              <label for="workerNumber">Nomor Pekerja (bagi PWTT/PWT)</label>
+              <input class="rounded-pill formhHeight" type="text" name="workerNumber" id="workerNumber" />
+            </div>
+
+            <div class="form-group">
+              <label for="posisi">Level Jabatan</label>
+              <select class="form-control rounded-pill formhHeight" id="posisi">
+                <option>Asst. Manager / Setara</option>
+                <option>Sr. Officer / Setara</option>
+                <option>Officer / Setara</option>
+                <option>Jr. officer / Setara</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="workingPeriod">Lama Bekerja</label>
+              <select class="form-control rounded-pill formhHeight" id="workingPeriod">
+                <option>>1 tahun</option>
+                <option>>5 tahun</option>
+                <option>>10 tahun</option>
+                <option>>15 tahun</option>
+                <option>>20 tahun</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="status">Status Kepegawaian</label>
+              <select class="form-control rounded-pill formhHeight" id="status">
+                <option>PWT</option>
+                <option>PWTT</option>
+              </select>
+            </div>
+            <div class="btns-group mt-5">
+              <a href="#" class="btn btn-prev rounded-pill">Previous</a>
+              <a href="#" class="btn btn-next rounded-pill">Next</a>
+            </div>
+          </div>
+
+          <div class="form-step">
+            <div class="input-group">
+              <label for="reason">1. Alasan ingin mengikuti Upstream Champion(Jelaskan dalam
+                minimal tiga kalimat)</label>
+              <input class="rounded-pill formhHeight" type="text" name="reason" id="reason" />
+            </div>
+            <div class="input-group">
+              <label for="experience">2. Pengalaman/kegiatan yang pernah diikuti selama bekerja di
+                Subholding Upstream? (Misalnya, komunitas lari, webinar ESG,
+                dan lain sebagainya).</label>
+              <input class="rounded-pill formhHeight" type="textarea" name="experience" id="experience" />
+            </div>
+            <div class="input-group">
+              <label for="idea">3. Ide kegiatan yang ingin direalisasikan ketika terpilih
+                sebagai Upstream Champion?</label>
+              <input class="rounded-pill formhHeight" type="text" name="idea" id="idea" />
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="rememberMe" class="form-check-input" /><label title="" for="rememberMe"
+                class="form-check-label">Saya menyetujui
+                <span class="text-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Syarat dan Ketentuan
+                </span>
+                yang berlaku</label>
+            </div>
+            <div class="btns-group">
+              <a href="#" class="btn btn-prev rounded-pill">Previous</a>
+              <a href="#" class="btn btn-orange btn-next rounded-pill">Submit</a>
+            </div>
+          </div>
+
+          <div class="form-step">
+            <img class="mt-43" src="./assets/img/checklist.png" alt="check" width="100" />
+            <h4 class="text-center mt-43">Terima Kasih telah Mendaftar!</h4>
+            <p class="text-center">
+              Silakan periksa kotak masuk pada email untuk
+              verifikasi data diri Anda!
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div class="fs-14 text-white text-center py-20" id="copyright">
+        PT Pertamina Hulu Energi © Copyright
+        <span id="currentYear"></span>.<br />
+        All rights reserved.
+      </div>
+    </div>
+  </section>
+
+  <!-- modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fs-5" id="exampleModalLabel">
+            Syarat dan Ketentuan
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="p-0">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
                 Saya bersedia mengikuti seluruh rangkaian program Upstream
                 Champion dari awal hingga akhir dengan mematuhi aturan-aturan
                 yang berlaku dalam program ini dan peraturan yang berlaku di
                 Subholding Upstream secara umum.
-              </li>
-              <li class="textSk">
-                <img src="./assets/img/icon/check-circle.svg" alt="" />
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
                 Saya tidak akan menyalahgunakan program Upstream Champion ini
                 untuk hal-hal yang dapat merugikan diri saya sendiri, sesama
                 rekan Perwira, dan Subholding Upstream secara umum.
-              </li>
-              <li class="textSk">
-                <img src="./assets/img/icon/check-circle.svg" alt="" />
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
                 Apabila saya terpilih dalam program Upstream Champion, maka saya
                 bersedia mengunggah surat persetujuan dari atasan. Apabila saya
                 tidak mendapat persetujuan tersebut, maka proses pendaftaran
                 saya akan dianggap gugur.
-              </li>
-            </ul>
-          </div>
+              </label>
+            </div>
+
+          </ul>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Bootstrap JS -->
-    <script src="./vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="./vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- date Copyright -->
-    <script>
-      function updateYear() {
-        var currentYear = new Date().getFullYear();
-        document.getElementById("currentYear").textContent = currentYear;
-      }
-      updateYear();
-      setInterval(updateYear, 1000);
-    </script>
+  <!-- date Copyright -->
+  <script>
+    function updateYear() {
+      var currentYear = new Date().getFullYear();
+      document.getElementById("currentYear").textContent = currentYear;
+    }
+    updateYear();
+    setInterval(updateYear, 1000);
+  </script>
 
-    <script>
-      const prevBtns = document.querySelectorAll(".btn-prev");
-      const nextBtns = document.querySelectorAll(".btn-next");
-      const formSteps = document.querySelectorAll(".form-step");
-      const progressSteps = document.querySelectorAll(".progress-step");
-      const progress = document.getElementById("progress");
+  <script>
+    const prevBtns = document.querySelectorAll(".btn-prev");
+    const nextBtns = document.querySelectorAll(".btn-next");
+    const formSteps = document.querySelectorAll(".form-step");
+    const progressSteps = document.querySelectorAll(".progress-step");
+    const progress = document.getElementById("progress");
 
-      let formStepsNum = 0;
+    let formStepsNum = 0;
 
-      nextBtns.forEach((btn, index) => {
-        btn.addEventListener("click", () => {
-          if (formStepsNum < formSteps.length - 1) {
-            // Hanya increment jika bukan langkah terakhir
-            formStepsNum++;
-            updateFormSteps();
-            updateProgressbar();
-          }
-        });
+    nextBtns.forEach((btn, index) => {
+      btn.addEventListener("click", () => {
+        if (formStepsNum < formSteps.length - 1) {
+          // Hanya increment jika bukan langkah terakhir
+          formStepsNum++;
+          updateFormSteps();
+          updateProgressbar();
+        }
+      });
+    });
+
+    prevBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (formStepsNum > 0) {
+          // Hanya decrement jika bukan langkah pertama
+          formStepsNum--;
+          updateFormSteps();
+          updateProgressbar();
+        }
+      });
+    });
+
+    function updateFormSteps() {
+      formSteps.forEach((formStep) => {
+        formStep.classList.remove("form-step-active");
       });
 
-      prevBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          if (formStepsNum > 0) {
-            // Hanya decrement jika bukan langkah pertama
-            formStepsNum--;
-            updateFormSteps();
-            updateProgressbar();
-          }
-        });
+      formSteps[formStepsNum].classList.add("form-step-active");
+    }
+
+    function updateProgressbar() {
+      progressSteps.forEach((progressStep, idx) => {
+        if (idx <= formStepsNum) {
+          progressStep.classList.add("progress-step-active");
+        } else {
+          progressStep.classList.remove("progress-step-active");
+        }
       });
 
-      function updateFormSteps() {
-        formSteps.forEach((formStep) => {
-          formStep.classList.remove("form-step-active");
-        });
+      const progressPercentage =
+        (formStepsNum / (progressSteps.length - 3)) * 100;
+      progress.style.width = `${progressPercentage}%`;
+    }
+  </script>
+</body>
 
-        formSteps[formStepsNum].classList.add("form-step-active");
-      }
-
-      function updateProgressbar() {
-        progressSteps.forEach((progressStep, idx) => {
-          if (idx <= formStepsNum) {
-            progressStep.classList.add("progress-step-active");
-          } else {
-            progressStep.classList.remove("progress-step-active");
-          }
-        });
-
-        const progressPercentage =
-          (formStepsNum / (progressSteps.length - 3)) * 100;
-        progress.style.width = `${progressPercentage}%`;
-      }
-    </script>
-  </body>
 </html>
