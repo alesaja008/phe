@@ -27965,3 +27965,19 @@ body.page__joblist .main .hero-image-img {
 input.form-control {
     font-size: 10px;
 }
+
+.cardTerm {
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.psAlign {
+    padding: 50px !important;
+    margin: auto;
+}
+
+.table-blue {
+    background: #0E74EA !important;
+    color: white;
+}
