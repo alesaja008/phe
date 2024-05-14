@@ -209,6 +209,19 @@
         font-size: 13px;
         color: gray;
       }
+
+      .btnBack {
+        padding: 0.75rem;
+        display: block;
+        text-decoration: none;
+        background-color: rgb(255 255 255);
+        color: #0065d9;
+        text-align: center;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        transition: 0.3s;
+        border: 1px solid #0065d9;
+      }
     </style>
   </head>
 
@@ -232,13 +245,17 @@
             width="10%"
             alt=""
           />
-          <h2 class="text-white">Login</h2>
+          <h2 class="text-white">Forgot Password</h2>
         </div>
         <div class="formRegist">
           <form action="#" class="form">
-            <h4 class="text-center">Please Sign In Champion!</h4>
+            <p class="text-center">
+              <img class="imgLogo" src="./assets/img/forget.png" alt="" />
+            </p>
+
             <p class="text-center space">
-              Buat kamu yang sudah terdaftar, silakan masuk ke akunmu.
+              Kami akan mengirim instruksi untuk mengganti password. Silakan
+              masukkan Alamat Email yang terdaftar:
             </p>
             <!-- Progress bar -->
 
@@ -258,33 +275,18 @@
                   id="email"
                 />
               </div>
-              <div class="input-group">
-                <label for="password">Kata Sandi</label>
-                <input
-                  class="rounded-pill formhHeight"
-                  type="password"
-                  name="password"
-                  id="password"
-                />
-              </div>
 
               <div class="">
                 <a href="#" class="btn btn-next width-100 ml-auto rounded-pill"
-                  >Masuk</a
+                  >Kirim</a
                 >
               </div>
-              <div class="d-flex flex-row-reverse mt-25">
-                <div class="p-2">
-                  <a href="#" class="fst-italic forget">Lupa Password?</a>
-                </div>
-              </div>
-              <hr />
-              <div class="d-flex flex-row mb-3">
-                <div class="p-2">
-                  <p class="daftarNow">
-                    Belum punya akun? <a href="daftar.html">Daftarkan Dirimu</a>
-                  </p>
-                </div>
+              <div class="mt-15">
+                <a
+                  href="daftar.html"
+                  class="btnBack btn-back width-100 ml-auto rounded-pill"
+                  >Kembali</a
+                >
               </div>
             </div>
           </form>
