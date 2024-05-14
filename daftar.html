@@ -231,7 +231,7 @@
         font-size: 13px;
       }
 
-      select#bekerja {
+      select#age {
         height: 30px;
         width: 100%;
         padding: 3px 6px 5px 13px;
@@ -239,6 +239,18 @@
       }
 
       select#status {
+        height: 30px;
+        width: 100%;
+        padding: 3px 6px 5px 13px;
+        font-size: 13px;
+      }
+      select#workingPeriod {
+        height: 30px;
+        width: 100%;
+        padding: 3px 6px 5px 13px;
+        font-size: 13px;
+      }
+      select#posisi {
         height: 30px;
         width: 100%;
         padding: 3px 6px 5px 13px;
@@ -391,14 +403,18 @@
                   id="workerNumber"
                 />
               </div>
-              <div class="input-group">
-                <label for="position">Posisi</label>
-                <input
-                  class="rounded-pill formhHeight"
-                  type="text"
-                  name="position"
-                  id="position"
-                />
+
+              <div class="form-group">
+                <label for="posisi">Posisi</label>
+                <select
+                  class="form-control rounded-pill formhHeight"
+                  id="posisi"
+                >
+                  <option>Asst. Manager / Setara</option>
+                  <option>Sr. Officer / Setara</option>
+                  <option>Officer / Setara</option>
+                  <option>Jr. officer / Setara</option>
+                </select>
               </div>
 
               <div class="form-group">
@@ -416,10 +432,10 @@
               </div>
 
               <div class="form-group">
-                <label for="employmentStatus">Status Kepegawaian</label>
+                <label for="status">Status Kepegawaian</label>
                 <select
                   class="form-control rounded-pill formhHeight"
-                  id="employmentStatus"
+                  id="status"
                 >
                   <option>PWT</option>
                   <option>PWTT</option>

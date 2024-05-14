@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Registraion Form</title>
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./dist/css/style.css" />
+
+    <style>
+      :root {
+        --primary-color: rgb(11, 78, 179);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", Roboto, Arial, Sans-serif;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        background: linear-gradient(
+          0deg,
+          rgba(161, 190, 54, 1) 0%,
+          rgba(5, 103, 203, 1) 100%
+        );
+      }
+
+      .formRegist {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 100vh; */
+      }
+
+      /* Global Stylings */
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+      }
+
+      .width-50 {
+        width: 50%;
+      }
+
+      .ml-auto {
+        margin-left: auto;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      span.textMini {
+        font-size: 12px;
+        color: #818181;
+      }
+
+      /* Form */
+
+      .form {
+        overflow: hidden;
+        width: clamp(500px, 30%, 430px);
+        margin: 0 auto;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        padding: 2rem;
+      }
+
+      .input-group {
+        margin: 0.5rem 0;
+      }
+
+      .input-group label {
+        font-size: 13px;
+      }
+
+      input.formhHeight {
+        height: 30px;
+        border: 1px solid #e2e2e2;
+      }
+
+      @keyframes animate {
+        from {
+          transform: scale(1, 0);
+          opacity: 0;
+        }
+
+        to {
+          transform: scale(1, 1);
+          opacity: 1;
+        }
+      }
+
+      /* Button */
+      .btns-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .btn {
+        padding: 0.75rem;
+        display: block;
+        text-decoration: none;
+        background-color: var(--primary-color);
+        color: #f3f3f3;
+        text-align: center;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+      }
+
+      .form-group label {
+        font-size: 13px;
+      }
+
+      select#gender {
+        height: 30px;
+        width: 100%;
+        padding: 3px 6px 5px 13px;
+        font-size: 13px;
+      }
+
+      select#bekerja {
+        height: 30px;
+        width: 100%;
+        padding: 3px 6px 5px 13px;
+        font-size: 13px;
+      }
+
+      select#status {
+        height: 30px;
+        width: 100%;
+        padding: 3px 6px 5px 13px;
+        font-size: 13px;
+      }
+
+      .logoSec {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .logoUcL {
+        width: 10%;
+      }
+
+      .logoSec h2 {
+        margin-top: 0.5rem;
+      }
+
+      .logoSec img {
+        width: 70px;
+      }
+
+      .auth-circle {
+        left: calc(50% - 275px);
+        position: absolute;
+        width: 550px;
+        z-index: -1;
+      }
+
+      .people-circle {
+        left: calc(50% - 485px);
+        position: absolute;
+        top: 239px;
+        width: 850px;
+        z-index: -1;
+        margin: auto;
+        left: 0;
+        right: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <div class="container">
+        <img
+          class="auth-circle"
+          src="./assets/img/EllipseRegist.svg"
+          alt="background-circle"
+        />
+        <img
+          class="people-circle"
+          src="./assets/img/formImg.png"
+          alt="background-circle2"
+        />
+        <div class="logoSec">
+          <img
+            class="imgLogo"
+            src="./assets/logo/Upstream Champion Portrait Logo Light.png"
+            width="10%"
+            alt=""
+          />
+          <h2 class="text-white">Registration Form</h2>
+        </div>
+        <div class="formRegist">
+          <form action="#" class="form">
+            <h4 class="text-center">Please Sign Up to be a Champion!</h4>
+            <p class="text-center">Silakan Isi Data Diri Anda</p>
+            <!-- Progress bar -->
+
+            <!-- Steps -->
+            <div class="form-step form-step-active">
+              <div class="input-group">
+                <label for="email"
+                  >Alamat Email
+                  <span class="textMini"
+                    >(@pertamina.com / @elnusa.co.id / @badaklng.com)</span
+                  >
+                </label>
+                <input
+                  class="rounded-pill formhHeight"
+                  type="text"
+                  name="email"
+                  id="email"
+                />
+              </div>
+              <div class="input-group">
+                <label for="password">Kata Sandi</label>
+                <input
+                  class="rounded-pill formhHeight"
+                  type="password"
+                  name="password"
+                  id="password"
+                />
+              </div>
+              <div class="">
+                <a href="#" class="btn btn-next width-100 ml-auto rounded-pill"
+                  >Masuk</a
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="fs-14 text-white text-center py-20" id="copyright">
+          PT Pertamina Hulu Energi © Copyright
+          <span id="currentYear"></span>.<br />
+          All rights reserved.
+        </div>
+      </div>
+    </section>
+
+    <!-- date Copyright -->
+    <script>
+      function updateYear() {
+        var currentYear = new Date().getFullYear();
+        document.getElementById("currentYear").textContent = currentYear;
+      }
+      updateYear();
+      setInterval(updateYear, 1000);
+    </script>
+  </body>
+</html>
