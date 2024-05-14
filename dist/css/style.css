@@ -379,13 +379,13 @@ textarea.form-control-lg {
 .form-check {
     display: block;
     min-height: 1.5rem;
-    padding-left: 1.5em;
-    margin-bottom: 0.125rem
+    padding-left: 2.5em;
+    margin-bottom: 25px;
 }
 
 .form-check .form-check-input {
     float: left;
-    margin-left: -1.5em
+    margin-left: -2.5em
 }
 
 .form-check-input {
@@ -8567,7 +8567,7 @@ fieldset:disabled .btn {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 1rem 1rem;
-    border-bottom: 1px solid #dee2e6;
+    /* border-bottom: 1px solid #dee2e6; */
     border-top-left-radius: calc(0.3rem - 1px);
     border-top-right-radius: calc(0.3rem - 1px)
 }

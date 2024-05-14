@@ -310,6 +310,30 @@
           display: none;
         }
       }
+
+      .form-check-input {
+        margin-left: -1.25rem;
+        margin-top: 0.3rem;
+        position: absolute;
+      }
+
+      label.form-check-label {
+        font-size: 12px;
+        font-weight: 300;
+        display: block;
+        margin: 0;
+        top: auto;
+        padding-top: 10px;
+      }
+      span.text-bold {
+        font-weight: 700;
+      }
+      .textSk {
+        font-size: 12px;
+        color: #818181;
+        line-height: 2;
+        display: ruby-text;
+      }
     </style>
   </head>
 
@@ -421,7 +445,7 @@
               </div>
 
               <div class="form-group">
-                <label for="posisi">Posisi</label>
+                <label for="posisi">Level Jabatan</label>
                 <select
                   class="form-control rounded-pill formhHeight"
                   id="posisi"
@@ -501,6 +525,23 @@
                   id="idea"
                 />
               </div>
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  id="rememberMe"
+                  class="form-check-input"
+                /><label title="" for="rememberMe" class="form-check-label"
+                  >Saya menyetujui
+                  <span
+                    class="text-bold"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Syarat dan Ketentuan
+                  </span>
+                  yang berlaku</label
+                >
+              </div>
               <div class="btns-group">
                 <a href="#" class="btn btn-prev rounded-pill">Previous</a>
                 <a href="#" class="btn btn-next rounded-pill">Finish</a>
@@ -529,6 +570,59 @@
         </div>
       </div>
     </section>
+
+    <!-- modal -->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fs-5" id="exampleModalLabel">
+              Syarat dan Ketentuan
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li class="textSk">
+                <img src="./assets/img/icon/check-circle.svg" alt="" />
+                Saya bersedia mengikuti seluruh rangkaian program Upstream
+                Champion dari awal hingga akhir dengan mematuhi aturan-aturan
+                yang berlaku dalam program ini dan peraturan yang berlaku di
+                Subholding Upstream secara umum.
+              </li>
+              <li class="textSk">
+                <img src="./assets/img/icon/check-circle.svg" alt="" />
+                Saya tidak akan menyalahgunakan program Upstream Champion ini
+                untuk hal-hal yang dapat merugikan diri saya sendiri, sesama
+                rekan Perwira, dan Subholding Upstream secara umum.
+              </li>
+              <li class="textSk">
+                <img src="./assets/img/icon/check-circle.svg" alt="" />
+                Apabila saya terpilih dalam program Upstream Champion, maka saya
+                bersedia mengunggah surat persetujuan dari atasan. Apabila saya
+                tidak mendapat persetujuan tersebut, maka proses pendaftaran
+                saya akan dianggap gugur.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="./vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- date Copyright -->
     <script>
