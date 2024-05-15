@@ -27719,6 +27719,7 @@ body.page__joblist .main .hero-image-img {
     color: black;
     border-radius: 20px;
     margin: 20px 0;
+    background: #f2f4f7;
   }
   
   .question {
@@ -27729,7 +27730,9 @@ body.page__joblist .main .hero-image-img {
     display: flex;
     align-items: center;
     cursor: pointer;
+    background: #f2f4f773;
     color: #818181;
+    border-radius: 20px;
   }
   
   .question::after {
